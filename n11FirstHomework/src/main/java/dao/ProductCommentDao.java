@@ -16,8 +16,8 @@ public class ProductCommentDao extends BaseDao {
 
     public List<ProductCommentDto> findProductCommentByProductId(long productId)
     {
-        Session session=sessionFactory.openSession();
-        Query query= session.createQuery("select new dto.ProductCommentDto( user.userName," +
+
+        Query query= getCurrentSession().createQuery("select new dto.ProductCommentDto( user.userName," +
                                                             "category.categoryName," +
                                                             "product.price," +
                                                             "product.productName," +

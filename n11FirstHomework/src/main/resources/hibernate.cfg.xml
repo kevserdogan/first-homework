@@ -12,6 +12,7 @@
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">dogan1</property>
 
+
         <!-- SQL dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL10Dialect</property>
 

@@ -11,13 +11,13 @@ public class HibernateUtil {
     private static SessionFactory  buildSessionFactory()
     {
         try {
-            if(sessionFactory ==null || sessionFactory.isClosed())
-            {
+          //  if(sessionFactory ==null || sessionFactory.isClosed())
+           // {
                 Configuration conf = new Configuration();
                 SessionFactory sessionFactory = conf.configure("hibernate.cfg.xml").buildSessionFactory();
                 return sessionFactory;
-            }
-            return sessionFactory;
+         //   }
+         //   return sessionFactory;
         }
         catch (Exception e)
         {

@@ -13,8 +13,8 @@ public class CategoryDao extends BaseDao{
 
     public List<CategoryEntity> findAll()
     {
-        Session session=sessionFactory.openSession();
-        Query query= session.createQuery("select category from CategoryEntity category");
+
+        Query query= getCurrentSession().createQuery("select category from CategoryEntity category");
         if(query.list().size()>0)
         {
             return (List<CategoryEntity>) query.list();
@@ -25,8 +25,8 @@ public class CategoryDao extends BaseDao{
     }
 
     public CategoryDao findById(long Id) {
-        Session session=sessionFactory.openSession();
-        Query query= session.createQuery("select category from CategoryEntity category where categoryId="+Id);
+
+        Query query= getCurrentSession().createQuery("select category from CategoryEntity category where categoryId="+Id);
             return (CategoryDao) query.getSingleResult();
     }
 

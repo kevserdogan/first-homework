@@ -1,22 +1,26 @@
 package entity;
 
+import net.bytebuddy.asm.Advice;
+
 import javax.persistence.*;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "Products")
-@SequenceGenerator(schema = "public",name = "generator", sequenceName = "product_id_seq")
-public class ProductEntity {
 
+public class ProductEntity {
+    @SequenceGenerator(schema = "public",name = "generator", sequenceName = "product_id_seq")
     @Id
     @GeneratedValue(generator = "generator")
     @Column(name = "ProductId", nullable = false)
     private long productId;
     @Column(name = "ProductName", nullable = false)
     private String productName;
-    @Column(name = "CategoryId", nullable = false)
-    private  long categoryId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CategoryId",foreignKey = @ForeignKey(name = "FK_Product_categoryId"))
+    private  CategoryEntity categoryId;
     @Column(name = "Price", nullable = false,precision = 18,scale = 2)
     private double price;
     @Column(name = "Quantity", nullable = false)
@@ -41,11 +45,11 @@ public class ProductEntity {
         this.productName = productName;
     }
 
-    public long getCategoryId() {
+    public CategoryEntity getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(long categoryId) {
+    public void setCategoryId(CategoryEntity categoryId) {
         this.categoryId = categoryId;
     }
 

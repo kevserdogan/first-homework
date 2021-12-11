@@ -19,10 +19,13 @@ public class ProductCommentEntity {
     private String comment;
     @Column(name = "CommentDate", nullable = false)
     private LocalDateTime commentDate;
-    @Column(name = "ProductId", nullable = false)
-    private long productId;
-    @Column(name = "UserId", nullable = false)
-    private long userId;
+
+    @ManyToOne
+    @JoinColumn(name = "ProductId")
+    private ProductEntity productId;
+    @ManyToOne
+    @JoinColumn(name = "UserId")
+    private UserEntity userId;
     @Column(name = "Point", nullable = false)
     private int productPoint;
 
