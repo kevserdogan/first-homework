@@ -1,0 +1,17 @@
+dao\ProductDao.class
+dto\ProductDto.class
+base\BaseDao.class
+dto\CategoryDto.class
+dto\ProductCommentDto.class
+entity\ProductCommentEntity.class
+baseInterface\Crudable.class
+application\Application.class
+hibernate\HibernateUtil.class
+entity\CategoryEntity.class
+entity\UserEntity.class
+dto\CommentDto.class
+dto\UserDto.class
+dao\ProductComment.class
+entity\ProductEntity.class
+dao\ProductCommentDao.class
+dao\CategoryDao.class
